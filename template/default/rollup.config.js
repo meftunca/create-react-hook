@@ -3,6 +3,7 @@ import commonjs from 'rollup-plugin-commonjs'
 import external from 'rollup-plugin-peer-deps-external'
 import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
+import minify from "rollup-plugin-babel-minify";
 
 import pkg from './package.json'
 
@@ -27,6 +28,7 @@ export default {
       exclude: 'node_modules/**'
     }),
     resolve(),
-    commonjs()
+    commonjs(),
+    minify()
   ]
 }
